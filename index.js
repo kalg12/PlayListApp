@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
 
+//Configurando template engine de pug
+app.set('view engine', 'pug');
+//Ahora definimos la carpeta de las vistas
+app.set('views', './views');
+
+//Routes
+app.use(auth);
+
 //Nos traemos PORT de la variable de entorno del archivo index.js de la carpeta config
 const {port} = require('./config/index');
 
